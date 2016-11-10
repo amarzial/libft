@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:54:34 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:54:36 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/10 16:28:47 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strstr(char *src, char *to_find)
 	int		found;
 
 	outer = 0;
+	if (*to_find == '\0')
+		return (src);
 	while (src[outer])
 	{
 		found = 1;

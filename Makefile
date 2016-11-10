@@ -8,7 +8,8 @@ ft_strlen.c ft_strdup.c ft_strtrim.c ft_strclr.c ft_putnbr_fd.c ft_strnew.c \
 ft_strncmp.c ft_strdel.c ft_isascii.c ft_isalpha.c ft_strcmp.c ft_putendl_fd.c \
 ft_memchr.c ft_memccpy.c ft_memcmp.c ft_putstr.c ft_toupper.c ft_strequ.c \
 ft_tolower.c ft_putnbr.c ft_isdigit.c ft_atoi.c ft_striter.c ft_striteri.c \
-ft_strjoin.c ft_putendl.c ft_strmap.c ft_bzero.c ft_memdel.c
+ft_strjoin.c ft_putendl.c ft_strmap.c ft_bzero.c ft_memdel.c ft_lstadd.c \
+ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c
 INCLUDES = libft.h
 OBJECTS = $(SOURCES:.c=.o)
 NAME = libft.a
@@ -17,6 +18,7 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
 
 $(OBJECTS): $(SOURCES) $(INCLUDES)
 	$(CC) $(CFLAGS) $(SOURCES)

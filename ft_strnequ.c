@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:39:52 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 17:15:29 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/10 17:37:54 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
+	if (*s1 == '\0' || *s2 == '\0')
+		return (1);
 	if (n == 0)
 		return (0);
-	while (n-- && ft_tolower(*s1) == ft_tolower(*s2) && *s1 && *s2)
+	while (n-- && *s1 == *s2 && *s1 && *s2)
 	{
 		s1++;
 		s2++;
@@ -28,7 +30,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 		s1--;
 		s2--;
 	}
-	if (ft_tolower(*s1) == ft_tolower(*s2))
+	if (*s1 == *s2)
 		return (1);
 	return (0);
 }

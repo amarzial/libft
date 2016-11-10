@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:38:49 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 16:52:56 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/10 17:39:25 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	while (ft_tolower(*s1) == ft_tolower(*s2) && *s1 && *s2)
+	while (*s1 == *s2 && *s1 && *s2)
 	{
 		s1++;
 		s2++;

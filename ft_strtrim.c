@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 17:28:59 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/09 19:24:24 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/10 17:46:39 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s)
 		size--;
 	}
 	bg = 0;
-	while (s[bg] == ' ' || s[bg] == '\n' || s[bg] == '\t')
+	while ((s[bg] == ' ' || s[bg] == '\n' || s[bg] == '\t') && size)
 	{
 		bg++;
 		size--;
