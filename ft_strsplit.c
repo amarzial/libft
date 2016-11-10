@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 17:49:01 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 19:06:01 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/10 20:19:13 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char			**ft_strsplit(char const *s, char c)
 	char	**tab;
 
 	cur = 0;
+	if (!s)
+		return (0);
 	words = count_words(s, c);
 	if ((tab = (char**)ft_memalloc(sizeof(char*) * (words + 1))))
 	{

@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:55:45 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 12:23:05 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/10 20:20:11 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*out;
 	size_t	index;
 
-	if ((out = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	out = 0;
+	if (s && (out = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 	{
 		index = 0;
 		while (s[index])
