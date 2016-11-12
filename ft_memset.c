@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:51:42 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:51:47 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 16:02:20 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*iterator;
+	t_uc	*iterator;
 
-	iterator = (char*)s;
+	iterator = (t_uc*)s;
 	while (n--)
 		*iterator++ = c;
 	return (s);

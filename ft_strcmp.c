@@ -6,16 +6,18 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:52:35 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/10 16:49:46 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 18:57:17 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	while ((unsigned char)*s1 == (unsigned char)*s2 && *s1 && *s2)
+	while ((t_uc) * s1 == (t_uc) * s2 && *s1 && *s2)
 	{
-		s1++;
-		s2++;
+		++s1;
+		++s2;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return ((t_uc) * s1 - (t_uc) * s2);
 }

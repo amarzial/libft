@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:53:36 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:53:38 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 16:56:32 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ size_t	ft_strlen(const char *s)
 	size_t	count;
 
 	count = 0;
-	while (*s++ != '\0')
-		count++;
+	while (*s)
+	{
+		++s;
+		++count;
+	}
 	return (count);
 }

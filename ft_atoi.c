@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:44:54 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/10 20:03:32 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 18:50:13 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int		ft_atoi(const char *nbr)
 	while (*nbr == ' ' || *nbr == '\t' || *nbr == '\n' || *nbr == '\f' || \
 			*nbr == '\r' || *nbr == '\v')
 		nbr++;
-	if (*nbr == '-')
-		sign = -1;
-	else
-		sign = 1;
+	sign = 1;
 	if (*nbr == '-' || *nbr == '+')
+	{
+		sign = *nbr == '-' ? -1 : 1;
 		nbr++;
+	}
 	value = 0;
 	while (*nbr >= '0' && *nbr <= '9')
 	{

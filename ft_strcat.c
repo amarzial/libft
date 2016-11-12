@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:51:52 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:52:03 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 17:56:59 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 char	*ft_strcat(char *dest, const char *src)
 {
-	size_t	cur;
+	char	*tmp;
 
-	cur = ft_strlen(dest);
+	tmp = dest;
+	while (*dest)
+		++dest;
 	while (*src)
-		dest[cur++] = *src++;
-	dest[cur] = '\0';
-	return (dest);
+	{
+		*dest = *src;
+		++dest;
+		++src;
+	}
+	*dest = '\0';
+	return (tmp);
 }

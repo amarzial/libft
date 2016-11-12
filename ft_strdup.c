@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:53:01 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:53:03 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 16:57:52 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s)
 		while (s[cur])
 		{
 			out[cur] = s[cur];
-			cur++;
+			++cur;
 		}
 		out[cur] = '\0';
 	}

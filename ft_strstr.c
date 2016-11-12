@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:54:34 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/10 16:28:47 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 19:24:52 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 char	*ft_strstr(char *src, char *to_find)
 {
-	size_t	outer;
 	size_t	inner;
 	int		found;
 
-	outer = 0;
-	if (*to_find == '\0')
+	if (*to_find == 0)
 		return (src);
-	while (src[outer])
+	while (*src)
 	{
 		found = 1;
 		inner = 0;
 		while (to_find[inner])
 		{
-			if (src[outer + inner] != to_find[inner])
+			if (src[inner] != to_find[inner])
 			{
 				found = 0;
 				break ;
@@ -35,8 +33,8 @@ char	*ft_strstr(char *src, char *to_find)
 			inner++;
 		}
 		if (found)
-			return (src + outer);
-		outer++;
+			return (src);
+		++src;
 	}
 	return (0);
 }

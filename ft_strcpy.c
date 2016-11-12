@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:52:43 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:52:45 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 17:10:26 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	size_t	cur;
+	char	*tmp;
 
-	cur = 0;
-	while (src[cur])
+	tmp = dest;
+	while (*src)
 	{
-		dest[cur] = src[cur];
-		cur++;
+		*dest = *src;
+		++dest;
+		++src;
 	}
-	dest[cur] = '\0';
-	return (dest);
+	*dest = '\0';
+	return (tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:46:40 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/06 10:47:11 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/12 16:03:26 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*cursor;
+	t_uc	*cursor;
 
-	cursor = (char*)s;
+	cursor = (t_uc*)s;
 	while (n--)
 		*cursor++ = 0;
 }
