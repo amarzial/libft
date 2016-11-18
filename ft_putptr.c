@@ -6,13 +6,13 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 20:43:49 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/18 13:33:03 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/18 13:36:55 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putptr(long unsigned int n)
+void	ft_putptr(unsigned long n)
 {
 	char	digits[10];
 	int		count;
