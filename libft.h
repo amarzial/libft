@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/18 19:42:45 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/18 20:12:30 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define ABS(x) ((x < 0) ? -x : x)
 
 typedef struct			s_list
 {
