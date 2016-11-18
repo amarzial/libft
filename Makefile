@@ -60,7 +60,9 @@ SOURCES = ft_abs.c \
 		  ft_tabdel.c \
 		  ft_tolower.c \
 		  ft_toupper.c \
-		  ft_putptr.c
+		  ft_putptr.c \
+		  ft_itoa_base.c \
+		  ft_putnbr_base.c
 
 OBJECTS = $(SOURCES:.c=.o)
 NAME = libft.a
