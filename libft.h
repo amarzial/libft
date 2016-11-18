@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/18 13:36:37 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/18 13:42:44 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,6 @@ void					ft_tabdel(void ***tab);
 
 int						ft_abs(int nb);
 
-void					ft_putptr(unsigned long);
+void					ft_putptr(void *ptr);
 
 #endif
