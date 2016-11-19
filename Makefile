@@ -57,7 +57,6 @@ SOURCES = ft_abs.c \
 		  ft_strstr.c \
 		  ft_strsub.c \
 		  ft_strtrim.c \
-		  ft_tabdel.c \
 		  ft_tolower.c \
 		  ft_toupper.c \
 		  ft_putptr.c \

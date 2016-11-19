@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/18 20:12:30 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/19 10:40:53 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,8 +143,6 @@ void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-
-void					ft_tabdel(void ***tab);
 
 int						ft_abs(int nb);
 
