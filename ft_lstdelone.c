@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 12:54:56 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/10 18:31:03 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/21 11:26:46 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	del((*alst)->content, (*alst)->content_size);
+	if (del)
+		del((*alst)->content, (*alst)->content_size);
 	free(*alst);
 	*alst = 0;
 }
