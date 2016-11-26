@@ -66,7 +66,8 @@ SOURCES = ft_abs.c \
 		  ft_min.c \
 		  ft_writeendl.c
 
-INCLUDES = libft.h
+SRCDIR = ./srcs/
+INCLUDES = ./includes/libft.h
 OBJECTS = $(SOURCES:.c=.o)
 NAME = libft.a
 
@@ -78,9 +79,9 @@ $(NAME): $(OBJECTS)
 	@ ranlib $(NAME)
 	@ echo "Finished"
 
-$(OBJECTS): $(SOURCES) $(INCLUDES)
+$(OBJECTS): $(addprefix $(SRCDIR), $(SOURCES)) $(INCLUDES)
 	@ echo "Compiling $(NAME)..."
-	@ $(CC) $(CFLAGS) $(SOURCES) -I$(dir $(INCLUDES))
+	@ $(CC) $(CFLAGS) $(addprefix $(SRCDIR), $(SOURCES)) -I$(dir $(INCLUDES))
 
 clean:
 	@ echo "Deleting object files"
