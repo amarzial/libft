@@ -65,6 +65,7 @@ SOURCES = ft_abs.c \
 		  ft_max.c \
 		  ft_min.c
 
+INCLUDES = libft.h
 OBJECTS = $(SOURCES:.c=.o)
 NAME = libft.a
 
@@ -75,7 +76,7 @@ $(NAME): $(OBJECTS)
 	ranlib $(NAME)
 
 $(OBJECTS): $(SOURCES) $(INCLUDES)
-	$(CC) $(CFLAGS) $(SOURCES)
+	$(CC) $(CFLAGS) $(SOURCES) -I$(dir $(INCLUDES))
 
 clean:
 	rm -f $(OBJECTS)
