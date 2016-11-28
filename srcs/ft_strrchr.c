@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:54:18 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/12 18:27:53 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/11/26 15:31:41 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_strrchr(char *s, int c)
 	index++;
 	while (index)
 	{
-		if (s[index - 1] == (char)c)
-			return (s + index - 1);
 		--index;
+		if (s[index] == (char)c)
+			return (s + index);
 	}
 	return (0);
 }

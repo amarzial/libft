@@ -63,26 +63,33 @@ SOURCES = ft_abs.c \
 		  ft_itoa_base.c \
 		  ft_putnbr_base.c \
 		  ft_max.c \
-		  ft_min.c
+		  ft_min.c \
+		  ft_writeendl.c
 
-INCLUDES = libft.h
+SRCDIR = ./srcs/
+INCLUDES = ./includes/libft.h
 OBJECTS = $(SOURCES:.c=.o)
 NAME = libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@ echo "Creating library..."
+	@ ar rc $(NAME) $(OBJECTS)
+	@ ranlib $(NAME)
+	@ echo "Finished"
 
-$(OBJECTS): $(SOURCES) $(INCLUDES)
-	$(CC) $(CFLAGS) $(SOURCES) -I$(dir $(INCLUDES))
+$(OBJECTS): $(addprefix $(SRCDIR), $(SOURCES)) $(INCLUDES)
+	@ echo "Compiling $(NAME)..."
+	@ $(CC) $(CFLAGS) $(addprefix $(SRCDIR), $(SOURCES)) -I$(dir $(INCLUDES))
 
 clean:
-	rm -f $(OBJECTS)
+	@ echo "Deleting object files"
+	@ rm -f $(OBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	@ echo "Deleting $(NAME)"
+	@ rm -f $(NAME)
 
 re: fclean all
 
