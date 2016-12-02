@@ -6,12 +6,10 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:10:49 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/02 12:51:54 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/02 13:35:10 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "libft.h"
 
 static void	resetbuff(t_reader *rdr)
@@ -67,7 +65,7 @@ static int	reading(const int fd, t_reader *rdr)
 	return (1);
 }
 
-int			get_next_line(const int fd, char **line)
+int			ft_get_line(const int fd, char **line)
 {
 	static t_reader	file_readers[GET_LINE_MAX_FILES];
 	t_reader		*rdr;
