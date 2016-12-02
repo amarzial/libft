@@ -64,7 +64,8 @@ SOURCES = ft_abs.c \
 		  ft_putnbr_base.c \
 		  ft_max.c \
 		  ft_min.c \
-		  ft_writeendl.c
+		  ft_writeendl.c \
+		  ft_get_line.c
 
 SRCDIR = ./srcs/
 INCLUDES = ./includes/libft.h
