@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/02 12:47:41 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/02 22:34:12 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 # define GET_LINE_BUFF_SIZE 32
-# define GET_LINE_MAX_FILES 100
 # include "libft.h"
 
 typedef struct	s_reader
 {
+	int		fd;
 	char	*buffer;
 	char	*el;
 	int		stop;
