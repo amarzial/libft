@@ -6,21 +6,26 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:10:49 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/02 13:35:10 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/03 11:47:30 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 
-static void	resetbuff(t_reader *rdr)
+static void		resetbuff(t_reader *rdr)
 {
 	int		chunksize;
+	int		fd;
 
 	if (rdr->r_size == 0 && rdr->stop == 1)
 	{
+		fd = rdr->fd;
 		if (rdr->buffer)
 			free(rdr->buffer);
 		ft_memset((void*)rdr, 0, sizeof(t_reader));
+		rdr->fd = fd;
 		return ;
 	}
 	if (!rdr->buffer)
@@ -36,7 +41,7 @@ static void	resetbuff(t_reader *rdr)
 	rdr->r_size = chunksize;
 }
 
-static int	buffalloc(t_reader *rdr)
+static int		buffalloc(t_reader *rdr)
 {
 	char	*tmp;
 
@@ -49,7 +54,7 @@ static int	buffalloc(t_reader *rdr)
 	return (1);
 }
 
-static int	reading(const int fd, t_reader *rdr)
+static int		reading(const int fd, t_reader *rdr)
 {
 	int		cnt;
 
@@ -65,15 +70,37 @@ static int	reading(const int fd, t_reader *rdr)
 	return (1);
 }
 
-int			ft_get_line(const int fd, char **line)
+static t_reader	*get_file_handler(int fd, t_list **multilist)
 {
-	static t_reader	file_readers[GET_LINE_MAX_FILES];
+	t_reader		*tmp;
+	t_list			*cur;
+
+	cur = *multilist;
+	while (cur)
+	{
+		tmp = (t_reader*)cur->content;
+		if (tmp->fd == fd)
+			return (tmp);
+		cur = cur->next;
+	}
+	if (!(tmp = (t_reader*)ft_memalloc(sizeof(t_reader))))
+		return (0);
+	tmp->fd = fd;
+	if (!(cur = ft_lstnew(tmp, sizeof(t_reader))))
+		return (0);
+	free(tmp);
+	ft_lstadd(multilist, cur);
+	return ((t_reader*)cur->content);
+}
+
+int				ft_get_line(const int fd, char **line)
+{
+	static t_list	*multilist;
 	t_reader		*rdr;
 	int				res;
 
-	if (fd < 0 || !line)
+	if (fd < 0 || !line || !(rdr = get_file_handler(fd, &multilist)))
 		return (-1);
-	rdr = &(file_readers[fd]);
 	resetbuff(rdr);
 	while (!(rdr->el = ft_memchr(rdr->buffer, '\n', rdr->r_size)) && !rdr->stop)
 	{
