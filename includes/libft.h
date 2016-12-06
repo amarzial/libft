@@ -6,12 +6,17 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/02 22:34:12 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/06 12:46:22 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifdef FT_OPEN_HEADERS
+#  include <sys/types.h>
+#  include <sys/stat.h>
+#  include <fcntl.h>
+# endif
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -109,5 +114,6 @@ int						ft_max(int a, int b);
 int						ft_min(int a, int b);
 void					ft_writeendl(int fd, char *buffer, size_t size);
 int						ft_get_line(const int fd, char **line);
+size_t					ft_strcnt(const char *str, int c);
 
 #endif
