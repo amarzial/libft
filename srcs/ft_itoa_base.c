@@ -6,13 +6,13 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 19:53:17 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/18 19:45:17 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/07 14:08:44 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ndigits(int n, int base)
+static int	ndigits(t_putnbr n, int base)
 {
 	int	ret;
 
@@ -29,7 +29,7 @@ static int	ndigits(int n, int base)
 	return (ret);
 }
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_itoa_base(t_putnbr n, int base)
 {
 	char	*out;
 	int		index;

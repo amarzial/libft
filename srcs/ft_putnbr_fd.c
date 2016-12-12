@@ -6,15 +6,15 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 21:02:38 by amarzial          #+#    #+#             */
-/*   Updated: 2016/11/09 19:22:18 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/07 14:09:25 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(t_putnbr n, int fd)
 {
-	char	digits[10];
+	char	digits[20];
 	int		sign;
 	int		count;
 

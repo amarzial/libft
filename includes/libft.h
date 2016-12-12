@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/06 12:46:22 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/11 16:58:28 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct			s_list
 	struct s_list	*next;
 }						t_list;
 
+typedef long long int	t_putnbr;
 typedef unsigned char	t_uc;
 
 void					*ft_memset(void *s, int c, size_t n);
@@ -92,11 +93,11 @@ char					*ft_itoa(int n);
 void					ft_putchar(char c);
 void					ft_putstr(char const *s);
 void					ft_putendl(char const *s);
-void					ft_putnbr(int n);
+void					ft_putnbr(t_putnbr n);
 void					ft_putchar_fd(char c, int fd);
 void					ft_putstr_fd(char const *s, int fd);
 void					ft_putendl_fd(char const *s, int fd);
-void					ft_putnbr_fd(int n, int fd);
+void					ft_putnbr_fd(t_putnbr n, int fd);
 t_list					*ft_lstnew(void const *content, size_t content_size);
 void					ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -108,12 +109,14 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int						ft_abs(int nb);
 void					ft_putptr(void *ptr);
-char					*ft_itoa_base(int n, int base);
-void					ft_putnbr_base(int n, int base);
+char					*ft_itoa_base(t_putnbr n, int base);
+void					ft_putnbr_base(t_putnbr n, int base);
 int						ft_max(int a, int b);
 int						ft_min(int a, int b);
 void					ft_writeendl(int fd, char *buffer, size_t size);
 int						ft_get_line(const int fd, char **line);
 size_t					ft_strcnt(const char *str, int c);
+void					ft_putwchar(wchar_t c);
+void					ft_putwstr(wchar_t *str);
 
 #endif
