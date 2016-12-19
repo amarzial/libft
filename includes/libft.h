@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/17 20:23:16 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/19 22:09:02 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,6 @@ int						ft_get_line(const int fd, char **line);
 size_t					ft_strcnt(const char *str, int c);
 void					ft_putwchar(wchar_t c);
 void					ft_putwstr(wchar_t *str);
+int						ft_printf(const char *format, ...);
 
 #endif
