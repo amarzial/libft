@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/07 17:58:05 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/19 18:13:58 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/21 08:55:39 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,11 @@ static int	parse_num(char *str, t_arg *arg, va_list *lst)
 		arg->precision = ((str[1] == '*') ? \
 		get_int_arg(lst) : ft_atoi(str + 1));
 		arg->precision = (arg->precision < 0) ? 0 : arg->precision;
-		return (1 + idigits(arg->precision, 10) - (ft_isdigit(str[1]) ? 0 : 1));
+		if (str[1] == '*')
+			return (2);
+		else
+			return (1 + idigits(arg->precision, 10) - \
+			(ft_isdigit(str[1]) ? 0 : 1));
 	}
 	else if (ft_isdigit(*str) || *str == '*')
 	{
@@ -75,7 +79,7 @@ static int	parse_num(char *str, t_arg *arg, va_list *lst)
 		if (arg->field_width < 0 && \
 		(arg->field_width = ft_abs(arg->field_width)))
 			arg->flag_left = 1;
-		return (idigits(arg->field_width, 10));
+		return ((*str != '*') ? idigits(arg->field_width, 10) : 1);
 	}
 	return (0);
 }
