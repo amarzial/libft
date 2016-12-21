@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 12:10:12 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/17 20:54:44 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/21 07:53:32 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ static int		getwlen(const wchar_t *cur, int *size)
 static void		padding(const wchar_t *out, t_arg *arg, int len)
 {
 	int		wch;
-	char	fill;
 
-	fill = arg->flag_zero ? '0' : ' ';
 	if (arg->prec_set)
 		len = ft_min(len, arg->precision);
 	wch = getwlen(out, &len);
@@ -61,11 +59,11 @@ static void		padding(const wchar_t *out, t_arg *arg, int len)
 		if (arg->flag_left)
 		{
 			putnwstr(out, wch);
-			ft_printf_putnchar(fill, arg->field_width - len);
+			ft_printf_putnchar(' ', arg->field_width - len);
 		}
 		else
 		{
-			ft_printf_putnchar(fill, arg->field_width - len);
+			ft_printf_putnchar(' ', arg->field_width - len);
 			putnwstr(out, wch);
 		}
 	}

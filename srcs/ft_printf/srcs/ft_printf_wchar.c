@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 17:27:12 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/17 19:38:27 by amarzial         ###   ########.fr       */
+/*   Updated: 2016/12/21 07:49:22 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		padding(wchar_t out, t_arg *arg, int len)
 {
 	char	fill;
 
-	fill = arg->flag_zero ? '0' : ' ';
+	fill = ' ';
 	if (arg->prec_set && arg->precision > 0)
 		len = ft_min(len, arg->precision);
 	if (arg->field_width > len)
