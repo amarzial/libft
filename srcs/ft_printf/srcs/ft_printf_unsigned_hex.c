@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 21:49:35 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/17 20:58:20 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/01/07 15:40:51 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static uintmax_t	fetch_int(t_arg *arg, va_list *lst)
 
 	var = va_arg(*lst, uintmax_t);
 	if (arg->conversion == 'p' && (arg->flag_alt = 1))
-		return ((uintmax_t)(void*)var);
+		return ((uintmax_t)(uintptr_t)var);
 	else if (arg->length_mod == hh)
 		return ((unsigned char)var);
 	else if (arg->length_mod == h)
