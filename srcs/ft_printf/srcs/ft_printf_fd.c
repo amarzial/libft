@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_double.c                                 :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/21 08:04:03 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/21 08:36:35 by amarzial         ###   ########.fr       */
+/*   Created: 2017/01/20 22:35:35 by amarzial          #+#    #+#             */
+/*   Updated: 2017/01/20 23:25:04 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
 #include "libft.h"
-#include "ft_printf_internal.h"
 
-static long double	fetch(t_arg *arg, va_list *lst)
+int	ft_printf_fd(int fd, const char *format, ...)
 {
-	long double	num;
-	num = va_arg(*lst, long double);
-	if (arg->length_mod == L)
-		return (num);
-	else
-		return ((double)num);
-}
+	int	ret;
+	va_list lst;
 
-int		ft_printf_double(t_arg *arg, va_list *lst)
-{
-	long double	num;
-
-	num = fetch(arg, lst);
-
+	va_start(lst, format);
+	ret = ft_printf_core(fd, format, &lst);
+	va_end(lst);
+	return (ret);
 }
