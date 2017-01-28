@@ -69,10 +69,6 @@ SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_strcnt.c \
 		  ./srcs/ft_putwchar.c \
 		  ./srcs/ft_putwstr.c \
-		  ./srcs/ft_putwchar_fd.c \
-		  ./srcs/ft_putwstr_fd.c \
-		  ./srcs/ft_printf/srcs/ft_printf_core.c \
-		  ./srcs/ft_printf/srcs/ft_printf_fd.c \
 		  ./srcs/ft_printf/srcs/ft_printf.c \
 		  ./srcs/ft_printf/srcs/ft_printf_char.c \
 		  ./srcs/ft_printf/srcs/ft_printf_handlings.c \
