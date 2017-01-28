@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/01/20 23:22:07 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/01/27 23:25:33 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # endif
 # include <string.h>
 # include <stdarg.h>
+# include <stdint.h>
 # include <unistd.h>
 # include <stdlib.h>
 # define GET_LINE_BUFF_SIZE 32
@@ -112,6 +113,7 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int						ft_abs(int nb);
 void					ft_putptr(void *ptr);
 char					*ft_itoa_base(t_putnbr n, int base);
+intmax_t				ft_atoi2(const char *nbr);
 void					ft_putnbr_base(t_putnbr n, int base);
 int						ft_max(int a, int b);
 int						ft_min(int a, int b);
