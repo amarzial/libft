@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:49:26 by amarzial          #+#    #+#             */
-/*   Updated: 2017/01/20 23:30:01 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/01/28 18:21:26 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define FT_PRINTF_INTERNAL_H
 # include <stdarg.h>
 # include <stdint.h>
-# define FT_PRINTF_CSET "#0-+ *.%sSpdDioOuUxXcChljz0123456789"
-# define FT_PRINTF_CONVERSION "%sSpdDioOuUxXcC"
+# define FT_COLOR(x) "\x1B[" x "m"
 
 typedef struct	s_arg
 {
