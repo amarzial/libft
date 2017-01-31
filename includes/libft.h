@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/01/31 14:50:08 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/01/28 19:49:11 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <stdlib.h>
 # define GET_LINE_BUFF_SIZE 32
 # include "libft.h"
+# define FT_COLOR(x) "\x1B[" x "m"
 
 typedef struct			s_reader
 {
@@ -124,6 +125,9 @@ void					ft_putwchar_fd(wchar_t c, int fd);
 void					ft_putwstr_fd(wchar_t *str, int fd);
 void					ft_putwchar(wchar_t c);
 void					ft_putwstr(wchar_t *str);
+int						ft_printf_core(int fd, const char *format, \
+										va_list *lst);
+int						ft_printf_fd(int fd, const char *format, ...);
 int						ft_printf(const char *format, ...);
 
 #endif
