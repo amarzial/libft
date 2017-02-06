@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:10:49 by amarzial          #+#    #+#             */
-/*   Updated: 2016/12/06 12:46:00 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/06 14:34:22 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static t_reader	*get_file_handler(int fd, t_list **multilist)
 	return ((t_reader*)cur->content);
 }
 
-int				ft_get_line(const int fd, char **line)
+int				ft_getline(const int fd, char **line)
 {
 	static t_list	*multilist;
 	t_reader		*rdr;

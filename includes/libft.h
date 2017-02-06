@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/01/31 15:50:41 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/06 14:34:04 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void					ft_putnbr_base(t_putnbr n, int base);
 int						ft_max(int a, int b);
 int						ft_min(int a, int b);
 void					ft_writeendl(int fd, char *buffer, size_t size);
-int						ft_get_line(const int fd, char **line);
+int						ft_getline(const int fd, char **line);
 size_t					ft_strcnt(const char *str, int c);
 void					ft_putwchar_fd(wchar_t c, int fd);
 void					ft_putwstr_fd(wchar_t *str, int fd);
