@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/06 14:34:04 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/08 17:27:34 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,6 @@ int						ft_printf_core(int fd, const char *format, \
 										va_list *lst);
 int						ft_printf_fd(int fd, const char *format, ...);
 int						ft_printf(const char *format, ...);
+int						ft_strtoi(int *dest, const char *nbr);
 
 #endif
