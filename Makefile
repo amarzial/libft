@@ -14,6 +14,7 @@ SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_lstdel.c \
 		  ./srcs/ft_lstdelone.c \
 		  ./srcs/ft_lstiter.c \
+		  ./srcs/ft_lstlen.c \
 		  ./srcs/ft_lstmap.c \
 		  ./srcs/ft_lstnew.c \
 		  ./srcs/ft_memalloc.c \
