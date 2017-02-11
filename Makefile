@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -c -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_bzero.c \
 		  ./srcs/ft_atoi.c \
@@ -113,7 +113,7 @@ $(NAME): $(OBJECTS)
 
 %.o: %.c $(INCLUDES)
 	@ /bin/echo -n "Compiling: $< => "
-	@ if $(CC) -o $@ $(CFLAGS) $< $(addprefix -I ,$(sort $(dir $(INCLUDES)))) ;\
+	@ if $(CC) -o $@ -c $(CFLAGS) $< $(addprefix -I ,$(sort $(dir $(INCLUDES)))) ;\
 		then /bin/echo ✅; \
 		else /bin/echo ❌ ; fi
 
