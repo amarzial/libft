@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:10:49 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/21 01:00:41 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/21 08:55:20 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ static void		addtoline(char **line, t_reader *rdr)
 	ft_strncat(tmp, rdr->buffer, frombuffer);
 	if (rdr->el)
 	{
+		frombuffer++;
 		ft_memmove(rdr->buffer, rdr->buffer + frombuffer + 1, \
 		GET_LINE_BUFF_SIZE - frombuffer - 1);
 	}
-	rdr->b_size = GET_LINE_BUFF_SIZE - frombuffer;
+	rdr->r_size = GET_LINE_BUFF_SIZE - frombuffer;
 	*line = tmp;
 }
 
@@ -67,6 +68,7 @@ int				ft_getline(const int fd, char **line)
 {
 	static t_list	*multilist;
 	t_reader		*rdr;
+	int				out;
 
 	*line = 0;
 	if (fd < 0 || !line || !(rdr = get_file_handler(fd, &multilist)))
@@ -74,14 +76,15 @@ int				ft_getline(const int fd, char **line)
 	while (!rdr->stop)
 	{
 		rdr->el = ft_memchr(rdr->buffer, '\n', rdr->r_size);
-		rdr->r_size = read(fd, rdr->buffer, GET_LINE_BUFF_SIZE);
-		if (rdr->r_size == -1)
-			return (-1);
-		else if (rdr->r_size == 0 && (rdr->stop = 1))
-			return (0);
 		addtoline(line, rdr);
 		if (rdr->el)
 			break ;
+		out = read(fd, rdr->buffer + rdr->r_size, GET_LINE_BUFF_SIZE - rdr->r_size);
+		if (rdr->r_size == -1)
+			return (-1);
+		rdr->r_size += out;
+		if (rdr->r_size == 0 && (rdr->stop = 1))
+			return (0);
 	}
 	return (1);
 }
