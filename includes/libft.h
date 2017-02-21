@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/11 18:54:01 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/21 00:09:18 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@
 typedef struct			s_reader
 {
 	int		fd;
-	char	*buffer;
+	char	buffer[GET_LINE_BUFF_SIZE];
 	char	*el;
 	int		stop;
-	size_t	r_size;
+	int		r_size;
 	size_t	b_size;
 }						t_reader;
 
