@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:10:49 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/22 18:37:32 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/22 18:59:16 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,6 @@ int				ft_getline(const int fd, char **line)
 	*line = 0;
 	if (fd < 0 || !line || !(rdr = get_file_handler(fd, &multilist)))
 		return (-1);
-	if (rdr->stop)
-		return (0);
 	while (!rdr->stop)
 	{
 		rdr->el = ft_memchr(rdr->buffer, '\n', rdr->r_size);
@@ -86,8 +84,10 @@ int				ft_getline(const int fd, char **line)
 		if (rdr->r_size == -1)
 			return (-1);
 		rdr->r_size += out;
-		if (rdr->r_size == 0 && (rdr->stop = 1))
-			return (1);
+		if (rdr->r_size == 0 && (rdr->stop = 1) && !*line)
+			return (0);
 	}
+	if (rdr->stop && !*line)
+		return (0);
 	return (1);
 }
