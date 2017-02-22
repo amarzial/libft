@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:10:49 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/21 08:55:20 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/22 18:37:32 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static void		addtoline(char **line, t_reader *rdr)
 
 	frombuffer = rdr->el ? rdr->el - rdr->buffer : rdr->r_size;
 	size = frombuffer;
+	if (frombuffer == 0)
+		return ;
 	if (*line)
 		size += ft_strlen(*line);
 	tmp = ft_strnew(size);
@@ -56,11 +58,10 @@ static void		addtoline(char **line, t_reader *rdr)
 	ft_strncat(tmp, rdr->buffer, frombuffer);
 	if (rdr->el)
 	{
-		frombuffer++;
 		ft_memmove(rdr->buffer, rdr->buffer + frombuffer + 1, \
 		GET_LINE_BUFF_SIZE - frombuffer - 1);
 	}
-	rdr->r_size = GET_LINE_BUFF_SIZE - frombuffer;
+	rdr->r_size -= frombuffer + (rdr->el ? 1 : 0);
 	*line = tmp;
 }
 
@@ -73,6 +74,8 @@ int				ft_getline(const int fd, char **line)
 	*line = 0;
 	if (fd < 0 || !line || !(rdr = get_file_handler(fd, &multilist)))
 		return (-1);
+	if (rdr->stop)
+		return (0);
 	while (!rdr->stop)
 	{
 		rdr->el = ft_memchr(rdr->buffer, '\n', rdr->r_size);
@@ -84,7 +87,7 @@ int				ft_getline(const int fd, char **line)
 			return (-1);
 		rdr->r_size += out;
 		if (rdr->r_size == 0 && (rdr->stop = 1))
-			return (0);
+			return (1);
 	}
 	return (1);
 }
