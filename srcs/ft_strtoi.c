@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:44:54 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/08 17:27:58 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/03/02 17:11:42 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int		ft_strtoi(int *dest, const char *nbr)
 			return (0);
 	}
 	*dest = value * sign;
-	return (1);
+	return ((*nbr == '\0') ? 1 : 0);
 }
