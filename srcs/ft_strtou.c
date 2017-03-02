@@ -6,17 +6,18 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:44:54 by amarzial          #+#    #+#             */
-/*   Updated: 2017/03/02 19:24:00 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/03/02 19:26:48 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "libft.h"
 
-unsigned int	ft_strtou(int *dest, const char *nbr)
+unsigned int	ft_strtou(unsigned int *dest, const char *nbr)
 {
 	long long int	value;
 
+	value = 0;
 	while (*nbr == ' ' || *nbr == '\t' || *nbr == '\n' || *nbr == '\f' || \
 			*nbr == '\r' || *nbr == '\v')
 		nbr++;
