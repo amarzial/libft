@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/02/11 18:54:01 by amarzial         ###   ########.fr       */
+/*   Updated: 2017/02/25 00:39:28 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ size_t					ft_lstlen(t_list *lst);
 ** My extra functions
 */
 int						ft_abs(int nb);
+void					ft_swap(int *a, int *b);
 void					ft_putptr(void *ptr);
 char					*ft_itoa_base(t_putnbr n, int base);
 intmax_t				ft_atoi2(const char *nbr);
