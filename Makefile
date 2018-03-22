@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -O2 -Wall -Wextra -Werror -Wno-unused-result -fsanitize=address
 SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_bzero.c \
 		  ./srcs/ft_atoi.c \
@@ -129,3 +129,5 @@ fclean: clean
 
 re: fclean all
 
+so:
+	gcc -shared -o libft.so -O2 -fPIC $(SOURCES) -I ./includes/
