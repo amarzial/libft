@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2017/03/03 14:34:02 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/03/22 13:09:41 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ typedef struct			s_list
 	size_t			content_size;
 	struct s_list	*next;
 }						t_list;
+
+typedef struct			s_vector
+{
+	void			*data;
+	size_t			element_size;
+	size_t			size;
+    size_t          capacity;
+	void            *begin;
+    void            *end;
+}						t_vector;
 
 typedef long long int	t_putnbr;
 typedef unsigned char	t_uc;
