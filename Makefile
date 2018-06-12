@@ -93,6 +93,12 @@ SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_printf/srcs/ft_printf_utils.c \
 		  ./srcs/ft_printf/srcs/ft_printf_wchar.c \
 		  ./srcs/ft_printf/srcs/ft_printf_wstring.c \
+		  ./srcs/ft_vecnew.c \
+		  ./srcs/ft_vecadd.c \
+		  ./srcs/ft_vecreserve.c \
+		  ./srcs/ft_vecresize.c \
+		  ./srcs/ft_vecat.c \
+		  ./srcs/ft_vecdel.c
 
 INCLUDES = ./includes/libft.h \
 		   ./includes/ft_printf_handler.h \

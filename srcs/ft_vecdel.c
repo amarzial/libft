@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vecnew.c                                        :+:      :+:    :+:   */
+/*   ft_vecdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 12:57:11 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/12 22:46:30 by amarzial         ###   ########.fr       */
+/*   Created: 2018/06/12 19:01:01 by amarzial          #+#    #+#             */
+/*   Updated: 2018/06/12 22:16:11 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 #include <stdlib.h>
 
-t_vector ft_vecnew(size_t elem_size, void (*del)(void *))
+void ft_vecdel(t_vector *vec)
 {
-    t_vector vec;
+    size_t i;
 
-    if ((vec.data = malloc(elem_size)) == NULL)
-        return (vec);
-    vec.element_size = elem_size;
-    vec.capacity = 1;
-    vec.size = 0;
-    vec.del = del == NULL ? NULL : del;
-    return (vec);
+    if (vec->del != NULL)
+    {
+        i = 0;
+        while (i < vec->size)
+        {
+            vec->del((char *) vec->data + (i++ * vec->element_size));
+        }
+    }
+    free(vec->data);
 }
