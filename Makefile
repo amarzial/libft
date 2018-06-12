@@ -98,7 +98,7 @@ INCLUDES = ./includes/libft.h \
 		   ./includes/ft_printf_handler.h \
 		   ./includes/ft_printf_internal.h
 
-OBJECTS = $(notdir $(SOURCES:.c=.o))
+OBJECTS = $(addprefix ./objs/,$(notdir $(SOURCES:.c=.o)))
 NAME = libft.a
 
 vpath %.c ./srcs ./srcs/ft_printf/srcs
@@ -113,7 +113,8 @@ $(NAME): $(OBJECTS)
 	@ ranlib $(NAME)
 	@ echo "Finished"
 
-%.o: %.c $(INCLUDES)
+./objs/%.o: %.c $(INCLUDES)
+	@ mkdir -p ./objs
 	@ /bin/echo -n "Compiling: $< => "
 	@ if $(CC) -o $@ -c $(CFLAGS) $< $(addprefix -I ,$(sort $(dir $(INCLUDES)))) ;\
 		then /bin/echo ✅; \
@@ -122,6 +123,7 @@ $(NAME): $(OBJECTS)
 clean:
 	@ echo "Deleting object files"
 	@ rm -f $(OBJECTS)
+	@ rm -r ./objs/
 
 fclean: clean
 	@ echo "Deleting $(NAME)"
