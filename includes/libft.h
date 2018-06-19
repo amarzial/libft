@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/12 22:51:11 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/19 16:14:44 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ typedef struct			s_vector
 	void			*data;
 	size_t			element_size;
 	size_t			size;
-    size_t          capacity;
-    void            (*del)(void *);
+	size_t			capacity;
+	void			(*del)(void *);
 }						t_vector;
 
 typedef long long int	t_putnbr;
@@ -141,11 +141,11 @@ int						ft_printf(const char *format, ...);
 int						ft_strtoi(int *dest, const char *nbr);
 unsigned int			ft_strtou(unsigned int *dest, const char *nbr);
 
-int                     ft_vecadd(t_vector *vec, const void *data);
-void                    ft_vecdel(t_vector *vec);
-t_vector                ft_vecnew(size_t elem_size, void (*del)(void *));
-int                     ft_vecreserve(t_vector *vec, size_t size);
-int                     ft_vecresize(t_vector *vec, size_t size);
-void                    *ft_vecat(t_vector *vec, size_t position);
+int						ft_vecadd(t_vector *vec, const void *data);
+void					ft_vecdel(t_vector *vec);
+t_vector				ft_vecnew(size_t elem_size, void (*del)(void *));
+int						ft_vecreserve(t_vector *vec, size_t size);
+int						ft_vecresize(t_vector *vec, size_t size);
+void					*ft_vecat(t_vector *vec, size_t position);
 
 #endif

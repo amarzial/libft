@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O2 -Wall -Wextra -Werror -Wno-unused-result -fsanitize=address
+CFLAGS = -O2 -Wall -Wextra -Werror
 SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_bzero.c \
 		  ./srcs/ft_atoi.c \
@@ -121,15 +121,12 @@ $(NAME): $(OBJECTS)
 
 ./objs/%.o: %.c $(INCLUDES)
 	@ mkdir -p ./objs
-	@ /bin/echo -n "Compiling: $< => "
-	@ if $(CC) -o $@ -c $(CFLAGS) $< $(addprefix -I ,$(sort $(dir $(INCLUDES)))) ;\
-		then /bin/echo ✅; \
-		else /bin/echo ❌ ; fi
+	$(CC) -o $@ -c $(CFLAGS) $< $(addprefix -I ,$(sort $(dir $(INCLUDES))))
 
 clean:
 	@ echo "Deleting object files"
 	@ rm -f $(OBJECTS)
-	@ rm -r ./objs/
+	@ rm -rf ./objs/
 
 fclean: clean
 	@ echo "Deleting $(NAME)"
