@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/20 11:39:50 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/20 17:53:15 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/20 18:08:15 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		ft_opt_get(t_options opt, char *name, char ***dest)
 		{
 			if (dest != NULL)
 				*dest = var->args;
-			return (1);
+			return (var->used);
 		}
 		opt = opt->next;
 	}

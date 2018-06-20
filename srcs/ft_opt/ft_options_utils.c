@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/20 14:45:07 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/20 15:50:15 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/20 18:17:06 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,21 @@ t_options	opt_find(t_options opts, const char *str)
 	return (opts);
 }
 
+static int	expand_args(t_opt *opt, int size)
+{
+	int		current;
+	char	**args;
+
+	current = 0;
+	args = opt->args;
+	while (args && args[current] != NULL)
+		++current;
+	if ((args = (char**)realloc(opt->args, \
+					sizeof(char*) * (current + size + 1))) == NULL)
+		return (0);
+	return (1);
+}
+
 int			insert_args(t_options t, int *i, int ac, const char **av)
 {
 	t_opt	*opt;
@@ -33,15 +48,13 @@ int			insert_args(t_options t, int *i, int ac, const char **av)
 	int		size;
 
 	opt = (t_opt*)t->content;
-	if (opt->used)
-		return (OPT_DUPLICATE);
-	opt->used = 1;
+	opt->used += 1;
 	size = opt->nargs >= 0 ? opt->nargs : ac - 1 - *i;
 	if (size == 0)
 		return (OPT_OK);
 	if (size > ac - 1 - *i)
 		return (OPT_BAD_NARGS);
-	if ((opt->args = (char**)malloc(sizeof(char*) * (size + 1))) == NULL)
+	if (!expand_args(opt, size))
 		return (OPT_BAD_ALLOC);
 	opt->args[size] = NULL;
 	count = 0;
