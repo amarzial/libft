@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/20 11:39:50 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/20 16:57:52 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:53:15 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int		ft_opt_get(t_options opt, char *name, char ***dest)
 		var = (t_opt*)opt->content;
 		if (ft_strcmp(var->opt, name) == 0 && var->used)
 		{
-			*dest = var->args;
+			if (dest != NULL)
+				*dest = var->args;
 			return (1);
 		}
 		opt = opt->next;
