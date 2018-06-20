@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/20 16:03:32 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:59:40 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,8 @@ int						ft_vecresize(t_vector *vec, size_t size);
 void					*ft_vecat(t_vector *vec, size_t position);
 
 int						ft_opt_add(t_options *opt, const char *name, int args);
-int						ft_opt_parse(t_options opt, int ac, const char **av);
+int						ft_opt_parse(t_options opt, int ac, const char **av, \
+									int *pos);
 int						ft_opt_get(t_options opt, char *name, char ***dest);
 void					ft_opt_print(t_options opt);
 void					ft_opt_clear(t_options *opt);

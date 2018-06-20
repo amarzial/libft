@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/20 11:39:50 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/20 16:02:57 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:57:52 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_opt_add(t_options *opt, const char *name, int args)
 	return (OPT_OK);
 }
 
-int		ft_opt_parse(t_options opt, int ac, const char **av)
+int		ft_opt_parse(t_options opt, int ac, const char **av, int *pos)
 {
 	int			i;
 	t_options	t;
@@ -46,6 +46,7 @@ int		ft_opt_parse(t_options opt, int ac, const char **av)
 			return (status);
 		++i;
 	}
+	*pos = i;
 	return (OPT_OK);
 }
 
