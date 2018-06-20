@@ -1,141 +1,139 @@
-CC = gcc
-CFLAGS = -O2 -Wall -Wextra -Werror
-SOURCES = ./srcs/ft_abs.c \
-		  ./srcs/ft_bzero.c \
-		  ./srcs/ft_atoi.c \
-		  ./srcs/ft_atoi2.c \
-		  ./srcs/ft_isalnum.c \
-		  ./srcs/ft_isalpha.c \
-		  ./srcs/ft_isascii.c \
-		  ./srcs/ft_isdigit.c \
-		  ./srcs/ft_isprint.c \
-		  ./srcs/ft_itoa.c \
-		  ./srcs/ft_lstadd.c \
-		  ./srcs/ft_lstdel.c \
-		  ./srcs/ft_lstdelone.c \
-		  ./srcs/ft_lstiter.c \
-		  ./srcs/ft_lstlen.c \
-		  ./srcs/ft_lstmap.c \
-		  ./srcs/ft_lstnew.c \
-		  ./srcs/ft_memalloc.c \
-		  ./srcs/ft_memccpy.c \
-		  ./srcs/ft_memchr.c \
-		  ./srcs/ft_memcmp.c \
-		  ./srcs/ft_memcpy.c \
-		  ./srcs/ft_memdel.c \
-		  ./srcs/ft_memmove.c \
-		  ./srcs/ft_memset.c \
-		  ./srcs/ft_putchar.c \
-		  ./srcs/ft_putchar_fd.c \
-		  ./srcs/ft_putendl.c \
-		  ./srcs/ft_putendl_fd.c \
-		  ./srcs/ft_putnbr.c \
-		  ./srcs/ft_putnbr_fd.c \
-		  ./srcs/ft_putstr.c \
-		  ./srcs/ft_putstr_fd.c \
-		  ./srcs/ft_strcat.c \
-		  ./srcs/ft_strchr.c \
-		  ./srcs/ft_strclr.c \
-		  ./srcs/ft_strcmp.c \
-		  ./srcs/ft_strcpy.c \
-		  ./srcs/ft_strdel.c \
-		  ./srcs/ft_strdup.c \
-		  ./srcs/ft_strequ.c \
-		  ./srcs/ft_striter.c \
-		  ./srcs/ft_striteri.c \
-		  ./srcs/ft_strjoin.c \
-		  ./srcs/ft_strlcat.c \
-		  ./srcs/ft_strlen.c \
-		  ./srcs/ft_strmap.c \
-		  ./srcs/ft_strmapi.c \
-		  ./srcs/ft_strncat.c \
-		  ./srcs/ft_strncmp.c \
-		  ./srcs/ft_strncpy.c \
-		  ./srcs/ft_strnequ.c \
-		  ./srcs/ft_strnew.c \
-		  ./srcs/ft_strnstr.c \
-		  ./srcs/ft_strrchr.c \
-		  ./srcs/ft_strsplit.c \
-		  ./srcs/ft_strstr.c \
-		  ./srcs/ft_strsub.c \
-		  ./srcs/ft_strtoi.c \
-		  ./srcs/ft_strtou.c \
-		  ./srcs/ft_strtrim.c \
-		  ./srcs/ft_swap.c \
-		  ./srcs/ft_tolower.c \
-		  ./srcs/ft_toupper.c \
-		  ./srcs/ft_putptr.c \
-		  ./srcs/ft_itoa_base.c \
-		  ./srcs/ft_putnbr_base.c \
-		  ./srcs/ft_max.c \
-		  ./srcs/ft_min.c \
-		  ./srcs/ft_writeendl.c \
-		  ./srcs/ft_get_line.c \
-		  ./srcs/ft_strcnt.c \
-		  ./srcs/ft_putwchar.c \
-		  ./srcs/ft_putwstr.c \
-		  ./srcs/ft_putwchar_fd.c \
-		  ./srcs/ft_putwstr_fd.c \
-		  ./srcs/ft_printf/srcs/ft_printf_core.c \
-		  ./srcs/ft_printf/srcs/ft_printf_fd.c \
-		  ./srcs/ft_printf/srcs/ft_printf.c \
-		  ./srcs/ft_printf/srcs/ft_printf_char.c \
-		  ./srcs/ft_printf/srcs/ft_printf_handlings.c \
-		  ./srcs/ft_printf/srcs/ft_printf_noconv.c \
-		  ./srcs/ft_printf/srcs/ft_printf_parser.c \
-		  ./srcs/ft_printf/srcs/ft_printf_signed_decimal.c \
-		  ./srcs/ft_printf/srcs/ft_printf_signedtostr.c \
-		  ./srcs/ft_printf/srcs/ft_printf_string.c \
-		  ./srcs/ft_printf/srcs/ft_printf_unsigned_decimal.c \
-		  ./srcs/ft_printf/srcs/ft_printf_unsigned_hex.c \
-		  ./srcs/ft_printf/srcs/ft_printf_unsigned_octal.c \
-		  ./srcs/ft_printf/srcs/ft_printf_unsignedtostr_base.c \
-		  ./srcs/ft_printf/srcs/ft_printf_utils.c \
-		  ./srcs/ft_printf/srcs/ft_printf_wchar.c \
-		  ./srcs/ft_printf/srcs/ft_printf_wstring.c \
-		  ./srcs/ft_vecnew.c \
-		  ./srcs/ft_vecadd.c \
-		  ./srcs/ft_vecreserve.c \
-		  ./srcs/ft_vecresize.c \
-		  ./srcs/ft_vecat.c \
-		  ./srcs/ft_vecdel.c \
-		  ./srcs/ft_opt/ft_options.c \
-		  ./srcs/ft_opt/ft_options_utils.c \
+SRC = ./src/ft_abs.c \
+	  ./src/ft_bzero.c \
+	  ./src/ft_atoi.c \
+	  ./src/ft_atoi2.c \
+	  ./src/ft_isalnum.c \
+	  ./src/ft_isalpha.c \
+	  ./src/ft_isascii.c \
+	  ./src/ft_isdigit.c \
+	  ./src/ft_isprint.c \
+	  ./src/ft_itoa.c \
+	  ./src/ft_lstadd.c \
+	  ./src/ft_lstdel.c \
+	  ./src/ft_lstdelone.c \
+	  ./src/ft_lstiter.c \
+	  ./src/ft_lstlen.c \
+	  ./src/ft_lstmap.c \
+	  ./src/ft_lstnew.c \
+	  ./src/ft_memalloc.c \
+	  ./src/ft_memccpy.c \
+	  ./src/ft_memchr.c \
+	  ./src/ft_memcmp.c \
+	  ./src/ft_memcpy.c \
+	  ./src/ft_memdel.c \
+	  ./src/ft_memmove.c \
+	  ./src/ft_memset.c \
+	  ./src/ft_putchar.c \
+	  ./src/ft_putchar_fd.c \
+	  ./src/ft_putendl.c \
+	  ./src/ft_putendl_fd.c \
+	  ./src/ft_putnbr.c \
+	  ./src/ft_putnbr_fd.c \
+	  ./src/ft_putstr.c \
+	  ./src/ft_putstr_fd.c \
+	  ./src/ft_strcat.c \
+	  ./src/ft_strchr.c \
+	  ./src/ft_strclr.c \
+	  ./src/ft_strcmp.c \
+	  ./src/ft_strcpy.c \
+	  ./src/ft_strdel.c \
+	  ./src/ft_strdup.c \
+	  ./src/ft_strequ.c \
+	  ./src/ft_striter.c \
+	  ./src/ft_striteri.c \
+	  ./src/ft_strjoin.c \
+	  ./src/ft_strlcat.c \
+	  ./src/ft_strlen.c \
+	  ./src/ft_strmap.c \
+	  ./src/ft_strmapi.c \
+	  ./src/ft_strncat.c \
+	  ./src/ft_strncmp.c \
+	  ./src/ft_strncpy.c \
+	  ./src/ft_strnequ.c \
+	  ./src/ft_strnew.c \
+	  ./src/ft_strnstr.c \
+	  ./src/ft_strrchr.c \
+	  ./src/ft_strsplit.c \
+	  ./src/ft_strstr.c \
+	  ./src/ft_strsub.c \
+	  ./src/ft_strtoi.c \
+	  ./src/ft_strtou.c \
+	  ./src/ft_strtrim.c \
+	  ./src/ft_swap.c \
+	  ./src/ft_tolower.c \
+	  ./src/ft_toupper.c \
+	  ./src/ft_putptr.c \
+	  ./src/ft_itoa_base.c \
+	  ./src/ft_putnbr_base.c \
+	  ./src/ft_max.c \
+	  ./src/ft_min.c \
+	  ./src/ft_writeendl.c \
+	  ./src/ft_get_line.c \
+	  ./src/ft_strcnt.c \
+	  ./src/ft_putwchar.c \
+	  ./src/ft_putwstr.c \
+	  ./src/ft_putwchar_fd.c \
+	  ./src/ft_putwstr_fd.c \
+	  ./src/ft_printf_core.c \
+	  ./src/ft_printf_fd.c \
+	  ./src/ft_printf.c \
+	  ./src/ft_printf_char.c \
+	  ./src/ft_printf_handlings.c \
+	  ./src/ft_printf_noconv.c \
+	  ./src/ft_printf_parser.c \
+	  ./src/ft_printf_signed_decimal.c \
+	  ./src/ft_printf_signedtostr.c \
+	  ./src/ft_printf_string.c \
+	  ./src/ft_printf_unsigned_decimal.c \
+	  ./src/ft_printf_unsigned_hex.c \
+	  ./src/ft_printf_unsigned_octal.c \
+	  ./src/ft_printf_unsignedtostr_base.c \
+	  ./src/ft_printf_utils.c \
+	  ./src/ft_printf_wchar.c \
+	  ./src/ft_printf_wstring.c \
+	  ./src/ft_vecnew.c \
+	  ./src/ft_vecadd.c \
+	  ./src/ft_vecreserve.c \
+	  ./src/ft_vecresize.c \
+	  ./src/ft_vecat.c \
+	  ./src/ft_vecdel.c \
+	  ./src/ft_options.c \
+	  ./src/ft_options_utils.c
 
-INCLUDES = ./includes/libft.h \
-		   ./includes/ft_printf_handler.h \
-		   ./includes/ft_printf_internal.h \
-		   ./includes/ft_options.h
+OBJ=$(addprefix obj/,$(notdir $(SRC:.c=.o)))
+DEP=$(addprefix .d/,$(notdir $(SRC:.c=.d)))
 
-OBJECTS = $(addprefix ./objs/,$(notdir $(SOURCES:.c=.o)))
-NAME = libft.a
+CC=gcc
+CFLAGS=-Wall -Werror -Wextra -O2
+COMPILE.c=$(CC) $(CFLAGS) -c
+OUTPUT_OPTION= -MMD -MP -MF $(patsubst %.o,.d/%.d,$(notdir $@)) -o $@
 
-vpath %.c ./srcs ./srcs/ft_printf/srcs ./srcs/ft_opt/
+obj/%.o: src/%.c
+	@mkdir -p obj/
+	@mkdir -p .d/
+	$(COMPILE.c) $(OUTPUT_OPTION) $< -I./include
+
+NAME=libft.a
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJ)
 	@ /bin/echo -n "Creating library => "
-	@ if ar rc $(NAME) $(OBJECTS) ; \
+	@ if ar rc $(NAME) $(OBJ) ; \
 		then /bin/echo ✅; \
 		else /bin/echo ❌ ; fi
 	@ ranlib $(NAME)
 	@ echo "Finished"
 
-./objs/%.o: %.c $(INCLUDES)
-	@ mkdir -p ./objs
-	$(CC) -o $@ -c $(CFLAGS) $< $(addprefix -I ,$(sort $(dir $(INCLUDES))))
-
 clean:
-	@ echo "Deleting object files"
-	@ rm -f $(OBJECTS)
-	@ rm -rf ./objs/
+	rm -rf .d/
+	rm -rf obj/
 
 fclean: clean
-	@ echo "Deleting $(NAME)"
-	@ rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
-so:
-	gcc -shared -o libft.so -O2 -fPIC $(SOURCES) -I ./includes/
+-include $(DEP)
