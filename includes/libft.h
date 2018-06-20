@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:59:55 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/19 16:14:44 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:34:56 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # define GET_LINE_BUFF_SIZE 32
-# include "libft.h"
 # define FT_COL(x) "\x1B[" x "m"
 
 typedef struct			s_reader
@@ -52,6 +51,7 @@ typedef struct			s_vector
 
 typedef long long int	t_putnbr;
 typedef unsigned char	t_uc;
+typedef t_list*			t_options;
 
 void					*ft_memset(void *s, int c, size_t n);
 void					ft_bzero(void *s, size_t n);
@@ -147,5 +147,10 @@ t_vector				ft_vecnew(size_t elem_size, void (*del)(void *));
 int						ft_vecreserve(t_vector *vec, size_t size);
 int						ft_vecresize(t_vector *vec, size_t size);
 void					*ft_vecat(t_vector *vec, size_t position);
+
+int						ft_opt_add(t_options *opt, const char *name, int args);
+int						ft_opt_parse(t_options opt, int ac, const char **av);
+void					ft_opt_print(t_options opt);
+void					ft_opt_clear(t_options *opt);
 
 #endif

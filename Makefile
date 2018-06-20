@@ -98,16 +98,19 @@ SOURCES = ./srcs/ft_abs.c \
 		  ./srcs/ft_vecreserve.c \
 		  ./srcs/ft_vecresize.c \
 		  ./srcs/ft_vecat.c \
-		  ./srcs/ft_vecdel.c
+		  ./srcs/ft_vecdel.c \
+		  ./srcs/ft_opt/ft_options.c \
+		  ./srcs/ft_opt/ft_options_utils.c \
 
 INCLUDES = ./includes/libft.h \
 		   ./includes/ft_printf_handler.h \
-		   ./includes/ft_printf_internal.h
+		   ./includes/ft_printf_internal.h \
+		   ./includes/ft_options.h
 
 OBJECTS = $(addprefix ./objs/,$(notdir $(SOURCES:.c=.o)))
 NAME = libft.a
 
-vpath %.c ./srcs ./srcs/ft_printf/srcs
+vpath %.c ./srcs ./srcs/ft_printf/srcs ./srcs/ft_opt/
 
 all: $(NAME)
 
