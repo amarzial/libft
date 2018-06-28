@@ -6,7 +6,7 @@
 /*   By: amarzial <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/20 14:45:07 by amarzial          #+#    #+#             */
-/*   Updated: 2018/06/21 12:31:59 by amarzial         ###   ########.fr       */
+/*   Updated: 2018/06/28 11:24:53 by amarzial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static int	expand_args(t_opt *opt, int size, int *pos)
 	if ((args = (char**)realloc(opt->args, \
 					sizeof(char*) * (current + size + 1))) == NULL)
 		return (0);
-    opt->args = args;
-    *pos = current;
+	opt->args = args;
+	*pos = current;
 	return (1);
 }
 
@@ -48,7 +48,7 @@ int			insert_args(t_options t, int *i, int ac, const char **av)
 	t_opt	*opt;
 	int		count;
 	int		size;
-    int     pos;
+	int		pos;
 
 	opt = (t_opt*)t->content;
 	opt->used = 1;
